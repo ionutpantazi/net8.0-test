@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Content";
+}
+<p>
+    <a href="@Url.Action("Index", "Home")">go back</a>
+</p>
+
+<h1>@ViewData["Title"]</h1>
+
+<p>content page</p>
+
+<div>
+    data1: @Model.Data1 data2: @Model.Data2
+</div>

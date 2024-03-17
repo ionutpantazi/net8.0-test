@@ -1,2 +1,6 @@
-/dependencies
+/.vs
+/bin
+/obj
+/wwwroot/lib
 /wwwroot/js/node_modules
+/dependencies

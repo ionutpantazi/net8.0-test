@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Test App";
+}
+
+<!-- Header-->
+<header class="masthead text-center text-white mt-5">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">EventEpic</h1>
+            <h2 class="masthead-subheading mb-0">Discover, Experience, and Embrace the Epic!</h2>
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">For those about to rock...</h2>
+                    <p>Are you ready to embark on a journey of endless excitement, discovery, and unforgettable experiences? Welcome to EventEpic, your ultimate destination for discovering and exploring the hottest events in your area and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 2-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h2 class="display-4">We salute you!</h2>
+                    <p>At EventEpic, we understand the thrill of anticipation, the rush of adrenaline, and the joy of creating memories that last a lifetime. That's why we've curated a diverse array of events spanning every interest, passion, and niche imaginable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 3-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Let there be rock!</h2>
+                    <p>Whether you're a music aficionado searching for the next big concert, a foodie eager to sample the latest culinary delights, or an adventure seeker seeking adrenaline-pumping thrills, EventEpic has something for everyone. From concerts and festivals to workshops and exhibitions, our platform is your one-stop shop for all things epic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container px-5 pt-5">
+    <h2 class="display-2">Featured events</h2>
+    <div class="list-group pt-4">
+        @{
+            int i = 0;
+        }
+        @foreach (var item in Model.resultList)
+        {
+            <a href="event-fe/@item["id"]" class="list-group-item list-group-item-action flex-column align-items-start @(i==0 ? "active" : "")">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">@item["event_name"]</h5>
+                    <small>@item["date"]</small>
+                </div>
+                <p class="mb-1">@item["description"]</p>
+            </a>
+            i++;
+        }
+    </div>
+</div>
